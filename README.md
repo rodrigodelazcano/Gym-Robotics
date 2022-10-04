@@ -81,7 +81,7 @@ env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 ```
 
 <p align="center">
-  <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/tree/gifs_readme/docs/gifs/fetchreach.gif" alt="animated"/>
+  <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/tree/gifs_readme/docs/gifs" alt="animated"/>
 </p>
 
 If using these environments please also cite the following paper:
