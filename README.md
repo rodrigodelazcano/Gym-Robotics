@@ -31,6 +31,8 @@ Dependencies for old MuJoCo environments can still be installed by `pip install 
 
 ## Fetch environments
 
+The Fetch environments are based on the 7-DoF [Fetch Mobile Manipulator](https://fetchrobotics.com/) arm, with a two-fingered parallel gripper attached to it. The main environment tasks are the following: 
+
 * `FetchReach-v2`: Fetch has to move its end-effector to the desired goal position.
 * `FetchPush-v2`: Fetch has to move a box by pushing it until it reaches a desired goal position.
 * `FetchSlide-v2`: Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal.
@@ -39,6 +41,8 @@ Dependencies for old MuJoCo environments can still be installed by `pip install 
 <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpickandplace.gif" alt="animated" width="300" height="300"/> </p>
 
 ## Shadow Dexterous Hand environments
+
+These environments are based on the [Shadow Dexterous Hand](https://www.shadowrobot.com/), 5 which is an anthropomorphic robotic hand with 24 degrees of freedom. Of those 24 joints, 20 can be can be controlled independently whereas the remaining ones are coupled joints.
 
 * `HandReach-v1`: ShadowHand has to reach with its thumb and a selected finger until they meet at a desired goal position above the palm.
 * `HandManipulateBlock-v1`: ShadowHand has to manipulate a block until it achieves a desired goal position and rotation.
