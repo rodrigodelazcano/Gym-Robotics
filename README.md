@@ -30,24 +30,13 @@ The latest version and future versions of the MuJoCo environments will no longer
 Dependencies for old MuJoCo environments can still be installed by `pip install gymnasium_robotics[mujoco_py]`.
 
 ## Fetch environments
-<img src="https://openai.com/content/images/2018/02/fetch-reach.png" width="500">
 
-[FetchReach-v3](https://gym.openai.com/envs/FetchReach-v0/): Fetch has to move its end-effector to the desired goal position.
-
-
-<img src="https://openai.com/content/images/2018/02/fetch-slide.png" width="500">
-
-[FetchSlide-v2](https://gym.openai.com/envs/FetchSlide-v0/): Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal.
-
-
-<img src="https://openai.com/content/images/2018/02/fetch-push.png" width="500">
-
-[FetchPush-v2](https://gym.openai.com/envs/FetchPush-v0/): Fetch has to move a box by pushing it until it reaches a desired goal position.
-
-
-<img src="https://openai.com/content/images/2018/02/fetch-pickandplace.png" width="500">
-
-[FetchPickAndPlace-v2](https://gym.openai.com/envs/FetchPickAndPlace-v0/): Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table.
+| Environment ID           | Video | Description |
+| -------------- | ----- | ----------- |
+| `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move its <br /> end-effector to the desired goal position. |
+| `FetchPush-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpush.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move a box by pushing it until it reaches a desired goal position. |
+| `FetchSlide-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchslide.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal. |
+| `FetchPickAndPlace-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpickandplace.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table. |
 
 ## Shadow Dexterous Hand environments
 <img src="https://openai.com/content/images/2018/02/hand-reach.png" width="500">
@@ -79,13 +68,6 @@ These environments are instanceated by adding the following strings to the Hand 
 ```
 env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 ```
-
-| Environment ID           | Video | Description |
-| -------------- | ----- | ----------- |
-| `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move its <br /> end-effector to the desired goal position. |
-| `FetchPush-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpush.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move a box by pushing it until it reaches a desired goal position. |
-| `FetchSlide-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchslide.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal. |
-| `FetchPickAndPlace-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpickandplace.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table. |
 
 If using these environments please also cite the following paper:
 
