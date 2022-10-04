@@ -80,6 +80,10 @@ These environments are instanceated by adding the following strings to the Hand 
 env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 ```
 
+<p align="center">
+  <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/tree/gifs_readme/docs/gifs/fetchreach.gif" alt="animated"/>
+</p>
+
 If using these environments please also cite the following paper:
 
 ```bibtex
