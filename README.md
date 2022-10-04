@@ -31,32 +31,21 @@ Dependencies for old MuJoCo environments can still be installed by `pip install 
 
 ## Fetch environments
 
-| Environment ID           | Video | Description |
-| -------------- | ----- | ----------- |
-| `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move its <br /> end-effector to the desired goal position. |
-| `FetchPush-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpush.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move a box by pushing it until it reaches a desired goal position. |
-| `FetchSlide-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchslide.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal. |
-| `FetchPickAndPlace-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpickandplace.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table. |
+* `FetchReach-v2`: Fetch has to move its end-effector to the desired goal position.
+* `FetchPush-v2`: Fetch has to move a box by pushing it until it reaches a desired goal position.
+* `FetchSlide-v2`: Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal.
+* `FetchPickAndPlace-v2`: Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table.
+
+<p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpickandplace.gif" alt="animated" width="300" height="300"/> </p>
 
 ## Shadow Dexterous Hand environments
-<img src="https://openai.com/content/images/2018/02/hand-reach.png" width="500">
 
-[HandReach-v1](https://gym.openai.com/envs/HandReach-v0/): ShadowHand has to reach with its thumb and a selected finger until they meet at a desired goal position above the palm.
+* `HandReach-v1`: ShadowHand has to reach with its thumb and a selected finger until they meet at a desired goal position above the palm.
+* `HandManipulateBlock-v1`: ShadowHand has to manipulate a block until it achieves a desired goal position and rotation.
+* `HandManipulateEgg-v1`: ShadowHand has to manipulate an egg until it achieves a desired goal position and rotation.
+* `HandManipulatePen-v1`: ShadowHand has to manipulate a pen until it achieves a desired goal position and rotation.
 
-
-<img src="https://openai.com/content/images/2018/02/hand-block.png" width="500">
-
-[HandManipulateBlock-v1](https://gym.openai.com/envs/HandManipulateBlock-v0/): ShadowHand has to manipulate a block until it achieves a desired goal position and rotation.
-
-
-<img src="https://openai.com/content/images/2018/02/hand-egg.png" width="500">
-
-[HandManipulateEgg-v1](https://gym.openai.com/envs/HandManipulateEgg-v0/): ShadowHand has to manipulate an egg until it achieves a desired goal position and rotation.
-
-
-<img src="https://openai.com/content/images/2018/02/hand-pen.png" width="500">
-
-[HandManipulatePen-v1](https://gym.openai.com/envs/HandManipulatePen-v0/): ShadowHand has to manipulate a pen until it achieves a desired goal position and rotation.
+<p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/handblock.gif" alt="animated" width="300" height="300"/> </p>
 
 # Hand environments with Touch Sensors
 
@@ -65,7 +54,7 @@ Touch sensor observations are also available in all Hand environments, with exce
 - **Continuous Touch Sensor**: the value returned by each touch sensor is a continuous value that represents the external force made by an object over the sensor.
 
 These environments are instanceated by adding the following strings to the Hand environment id's: `_BooleanTouchSensor` or `_ContinuousTouchSensor`. For example, to add boolean touch sensors to `HandManipulateBlock-v1`, make the environment in the following way:
-```
+```python
 env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 ```
 
