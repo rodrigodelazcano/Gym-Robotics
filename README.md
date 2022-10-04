@@ -83,6 +83,9 @@ env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 | Environment ID           | Video | Description |
 | -------------- | ----- | ----------- |
 | `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move its <br /> end-effector to the desired goal position. |
+| `FetchPush-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpush.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move a box by pushing it until it reaches a desired goal position. |
+| `FetchSlide-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchslide.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to hit a puck across a long table such that it slides and comes to rest on the desired goal. |
+| `FetchPickAndPlace-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchpickandplace.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to pick up a box from a table using its gripper and move it to a desired goal above the table. |
 
 If using these environments please also cite the following paper:
 
