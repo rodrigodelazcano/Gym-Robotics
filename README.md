@@ -80,7 +80,7 @@ These environments are instanceated by adding the following strings to the Hand 
 env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 ```
 
-| Name           | Video | Description |
+| Environment ID           | Video | Description |
 | -------------- | ----- | ----------- |
 | `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move its end-effector to the desired goal position. |
 
