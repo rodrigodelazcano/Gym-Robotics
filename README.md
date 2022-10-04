@@ -53,10 +53,12 @@ Touch sensor observations are also available in all Hand environments, with exce
 - **Boolean Touch Sensor**: the observations of each touch sensor can return a value of `0` if no contact is detected with and object, and `1` otherwise.
 - **Continuous Touch Sensor**: the value returned by each touch sensor is a continuous value that represents the external force made by an object over the sensor.
 
-These environments are instanceated by adding the following strings to the Hand environment id's: `_BooleanTouchSensor` or `_ContinuousTouchSensor`. For example, to add boolean touch sensors to `HandManipulateBlock-v1`, make the environment in the following way:
+These environments are instanceated by adding the following strings to the Hand environment id's: `_BooleanTouchSensor` or `_ContinuousTouchSensor`. For example, to add boolean touch sensors to `HandManipulateEgg-v1`, make the environment in the following way:
 ```python
-env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
+env = gym.make('HandManipulateEgg_BooleanTouchSensor-v1')
 ```
+
+<p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/eggtouch.gif" alt="animated" width="300" height="300"/> </p>
 
 If using these environments please also cite the following paper:
 
