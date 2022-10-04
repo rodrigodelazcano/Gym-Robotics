@@ -82,7 +82,7 @@ env = gym.make('HandManipulateBlock_BooleanTouchSensor-v1')
 
 | Name | Video | Description |
 | ---- | ----- | ----------- |
-| `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="350" height="350"/> </p> | Fetch has to move its end-effector to the desired goal position. |
+| `FetchReach-v2`| <p align="center"> <img src="https://github.com/rodrigodelazcano/Gymnasium-Robotics/blob/gifs_readme/docs/gifs/fetchreach.gif" alt="animated" width="300" height="300"/> </p> | Fetch has to move its end-effector to the desired goal position. |
 
 If using these environments please also cite the following paper:
 
