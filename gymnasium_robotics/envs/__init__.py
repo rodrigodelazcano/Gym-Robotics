@@ -1,3 +1,4 @@
+from gymnasium_robotics.envs.anymal_c.anymal_c_env import AnymalCEnv
 from gymnasium_robotics.envs.fetch.pick_and_place import (
     MujocoFetchPickAndPlaceEnv,
     MujocoPyFetchPickAndPlaceEnv,
