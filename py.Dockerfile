@@ -13,13 +13,13 @@ RUN mkdir /root/.mujoco \
 
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/root/.mujoco/mujoco210/bin"
 
-RUN git clone https://github.com/openai/mujoco-py.git\
-    && cd mujoco-py \
-    && pip install -e .
+# RUN git clone https://github.com/openai/mujoco-py.git\
+#     && cd mujoco-py \
+#     && pip install -e .
 
 COPY . /usr/local/gymnasium-robotics/
 WORKDIR /usr/local/gymnasium-robotics/
 
-RUN pip install .[testing] --no-cache-dir
+RUN pip install .[testing]
 
 ENTRYPOINT ["/usr/local/gymnasium-robotics/bin/docker_entrypoint"]
