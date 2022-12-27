@@ -35,6 +35,7 @@ extras = {
     "testing": [
         "pytest==7.0.1",
         "mujoco_py<2.2,>=2.1",
+        "Jinja2>=3.0.3",
     ],
     "mujoco_py": ["mujoco_py<2.2,>=2.1"],
     "mamujoco": [
