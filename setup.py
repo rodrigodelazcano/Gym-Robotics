@@ -35,8 +35,6 @@ extras = {
     "testing": [
         "pytest==7.0.1",
         "mujoco_py<2.2,>=2.1",
-        "pettingzoo>=1.22.2",
-        "Jinja2>=3.0.3",
     ],
     "mujoco_py": ["mujoco_py<2.2,>=2.1"],
     "mamujoco": [
@@ -44,6 +42,10 @@ extras = {
         "Jinja2>=3.0.3",
     ],
 }
+
+extras["mamujoco_testing"] = (
+    extras["testing"] + extras["mamujoco"]
+)  # include mamujoco in pytest with python<3.11
 
 version = get_version()
 header_count, long_description = get_description()

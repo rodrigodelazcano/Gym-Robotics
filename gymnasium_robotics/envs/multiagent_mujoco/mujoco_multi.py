@@ -4,30 +4,14 @@ import gymnasium
 import numpy as np
 import pettingzoo
 from gymnasium.wrappers.time_limit import TimeLimit
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 893e05e (skip flake8 C901)
 
 from gymnasium_robotics.envs.multiagent_mujoco.coupled_half_cheetah import (
     CoupledHalfCheetah,
 )
-<<<<<<< HEAD
 from gymnasium_robotics.envs.multiagent_mujoco.many_segment_ant import ManySegmentAntEnv
 from gymnasium_robotics.envs.multiagent_mujoco.many_segment_swimmer import (
     ManySegmentSwimmerEnv,
 )
-=======
-from gymnasium_robotics.envs.multiagent_mujoco.coupled_half_cheetah import CoupledHalfCheetah
-from gymnasium_robotics.envs.multiagent_mujoco.many_segment_ant import ManySegmentAntEnv
-from gymnasium_robotics.envs.multiagent_mujoco.many_segment_swimmer import ManySegmentSwimmerEnv
->>>>>>> 7528709 (mamujoco imports)
-=======
-from gymnasium_robotics.envs.multiagent_mujoco.many_segment_ant import ManySegmentAntEnv
-from gymnasium_robotics.envs.multiagent_mujoco.many_segment_swimmer import (
-    ManySegmentSwimmerEnv,
-)
->>>>>>> 893e05e (skip flake8 C901)
 from gymnasium_robotics.envs.multiagent_mujoco.obsk import (
     _observation_structure,
     build_obs,
