@@ -22,6 +22,6 @@ RUN git clone https://github.com/openai/mujoco-py.git\
 COPY . /usr/local/gymnasium-robotics/
 WORKDIR /usr/local/gymnasium-robotics/
 
-RUN if [ "$PYTHON_VERSION" = "3.11" ] ; then pip install .[testing] --no-cache-dir ; else pip install .[mamujoco_testing] --no-cache-dir; fi
+RUN if [ $PYTHON_VERSION = '3.11' ] ; then pip install .[testing] --no-cache-dir ; else pip install .[mamujoco_testing] --no-cache-dir; fi
 
 ENTRYPOINT ["/usr/local/gymnasium-robotics/bin/docker_entrypoint"]
