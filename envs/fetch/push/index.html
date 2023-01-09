@@ -7,12 +7,12 @@
     <meta property="og:title" content="Gymnasium-Robotics Documentation" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="" />
-    <meta property="og:url" content="https://robotics.farama.org/envs/fetch/FetchReach.html" /><meta property="og:image" content="https://robotics.farama.org//_static/img/robotics-github.png" /><meta name="twitter:card" content="summary_large_image"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Fetch Slide" href="../FetchSlide/" /><link rel="prev" title="Fetch Push" href="../FetchPush/" />
-        <link rel="canonical" href="https://robotics.farama.org/envs/fetch/FetchReach.html" />
+    <meta property="og:url" content="https://robotics.farama.org/envs/fetch/push.html" /><meta property="og:image" content="https://robotics.farama.org//_static/img/robotics-github.png" /><meta name="twitter:card" content="summary_large_image"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Reach" href="../reach/" /><link rel="prev" title="Pick And Place" href="../pick_and_place/" />
+        <link rel="canonical" href="https://robotics.farama.org/envs/fetch/push.html" />
 
     <link rel="shortcut icon" href="../../../_static/robotics-favicon.png"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.15.dev1"/>
-        <title>Fetch Reach - Gymnasium-Robotics Documentation</title>
+        <title>Push - Gymnasium-Robotics Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=3cf7b839e8c50b5f3a39bb99d90baa7b845de926" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=24b18ece81cb9ff18679a2945b9c89ba44829d18" />
@@ -232,70 +232,35 @@
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../">Fetch</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../FetchPickAndPlace/">Fetch Pick And Place</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../FetchPush/">Fetch Push</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Fetch Reach</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../FetchSlide/">Fetch Slide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pick_and_place/">Pick And Place</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reach/">Reach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../slide/">Slide</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../hand/">Shadow Dexterous Hand</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/">Hand Block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#special-case-we-want-to-ignore-the-z-component-of-the-rotation">Special case: We want to ignore the Z component of the rotation.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#this-code-here-assumes-euler-angles-with-xyz-convention-we-first-transform">This code here assumes Euler angles with xyz convention. We first transform</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#to-euler-then-set-the-z-component-to-be-equal-between-the-two-and-finally">to euler, then set the Z component to be equal between the two, and finally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#transform-back-into-quaternions">transform back into quaternions.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#subtract-quaternions-and-extract-angle-between-them">Subtract quaternions and extract angle between them.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#goalenv-methods">GoalEnv methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id1">—————————-</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#we-weigh-the-difference-in-position-to-avoid-that-d-pos-in-meters-is-completely">We weigh the difference in position to avoid that <code class="docutils literal notranslate"><span class="pre">d_pos</span></code> (in meters) is completely</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#dominated-by-d-rot-in-radians">dominated by <code class="docutils literal notranslate"><span class="pre">d_rot</span></code> (in radians).</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#robotenv-methods">RobotEnv methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id2">—————————-</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#randomization-initial-rotation">Randomization initial rotation.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#randomize-initial-position">Randomize initial position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#run-the-simulation-for-a-bunch-of-timesteps-to-let-everything-settle-in">Run the simulation for a bunch of timesteps to let everything settle in.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#select-a-goal-for-the-object-position">Select a goal for the object position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#select-a-goal-for-the-object-rotation">Select a goal for the object rotation.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#assign-current-state-to-target-object-but-offset-a-bit-so-that-the-actual-object">Assign current state to target object but offset a bit so that the actual object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#is-not-obscured">is not obscured.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#move-the-object-to-the-side-since-we-do-not-care-about-it-s-position">Move the object to the side since we do not care about it’s position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#object-position-and-rotation">Object position and rotation.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id3">Randomization initial rotation.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id4">Randomize initial position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id5">Run the simulation for a bunch of timesteps to let everything settle in.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id6">Select a goal for the object position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id7">Select a goal for the object rotation.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id8">Assign current state to target object but offset a bit so that the actual object</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id9">is not obscured.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#id10">Move the object to the side since we do not care about it’s position.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandBlock/#noqa-d415">noqa: D415</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandEgg/">Hand Egg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandEgg/#noqa-d415">noqa: D415</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandPen/">Hand Pen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandPen/#noqa-d415">noqa: D415</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand/HandReach/">Hand Reach</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shadow_dexterous_hand/">Shadow Dexterous Hand</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/manipulate_block/">Manipulate Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/manipulate_block_touch_sensors/">Manipulate Block Touch Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/manipulate_egg/">Manipulate Egg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/manipulate_egg_touch_sensors/">Manipulate Egg Touch Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/manipulate_pen/">Manipulate Pen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/manipulate_pen_touch_sensors/">Manipulate Pen Touch Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shadow_dexterous_hand/reach/">Reach</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../hand_touch/">Shadow Dexterous Hand with Touch Sensors</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../hand_touch/HandBlockTouchSensors/">Hand Block Touch Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand_touch/HandEggTouchSensors/">Hand Egg Touch Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand_touch/HandPenTouchSensors/">Hand Pen Touch Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../hand_touch/ManipulateTouchSensors/">Manipulate Touch Sensors</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../maze/">Maze</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../maze/">Maze</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../maze/ant_maze/">Ant Maze</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maze/point_maze/">Point Maze</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../adroit_hand/">Adroit Hand</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../adroit_hand/">Adroit Hand</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../adroit_hand/adroit_door/">Adroit Door</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../adroit_hand/adroit_hammer/">Adroit Hammer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../adroit_hand/adroit_pen/">Adroit Pen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../adroit_hand/adroit_relocate/">Adroit Relocate</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../franka_kitchen/">Franka Kitchen</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../franka_kitchen/">Franka Kitchen</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../franka_kitchen/franka_kitchen/">Franka Kitchen</a></li>
 </ul>
 </li>
@@ -337,23 +302,22 @@
         </div>
         <article role="main">
           
-          <section id="fetch-reach">
-<h1>Fetch Reach<a class="headerlink" href="#fetch-reach" title="Permalink to this heading">#</a></h1>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/FetchReach.gif"><img alt="Fetch Reach" src="../../../_images/FetchReach.gif" style="width: 200px;" /></a>
+          <section id="push">
+<h1>Push<a class="headerlink" href="#push" title="Permalink to this heading">#</a></h1>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/push.gif"><img alt="../../../_images/push.gif" src="../../../_images/push.gif" style="width: 200px;" /></a>
 </figure>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h2>
 <p>This environment was introduced in <a class="reference external" href="https://arxiv.org/abs/1802.09464">“Multi-Goal Reinforcement Learning: Challenging Robotics Environments and Request for Research”</a>.</p>
-<p>The task in the environment is for a manipulator to move the end effector to a randomly selected position in the robot’s workspace. The robot is a 7-DoF <a class="reference external" href="https://fetchrobotics.com/">Fetch Mobile Manipulator</a> with a two-fingered parallel gripper.
-The robot is controlled by small displacements of the gripper in Cartesian coordinates and the inverse kinematics are computed internally by the MuJoCo framework. The task is also continuing which means that the robot has to maintain the end effector’s
-position for an indefinite period of time.</p>
+<p>The task in the environment is for a manipulator to move a block to a target position on top of a table by pushing with its gripper. The robot is a 7-DoF <a class="reference external" href="https://fetchrobotics.com/">Fetch Mobile Manipulator</a> with a two-fingered parallel gripper.
+The robot is controlled by small displacements of the gripper in Cartesian coordinates and the inverse kinematics are computed internally by the MuJoCo framework. The gripper is locked in a closed configuration in order to perform the push task.
+The task is also continuing which means that the robot has to maintain the block in the target position for an indefinite period of time.</p>
 <p>The control frequency of the robot is of <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">25</span> <span class="pre">Hz</span></code>. This is achieved by applying the same action in 20 subsequent simulator step (with a time step of <code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.002</span> <span class="pre">s</span></code>) before returning the control to the robot.</p>
 </section>
 <section id="action-space">
 <h2>Action Space<a class="headerlink" href="#action-space" title="Permalink to this heading">#</a></h2>
-<p>The action space is a <code class="docutils literal notranslate"><span class="pre">Box(-1.0,</span> <span class="pre">1.0,</span> <span class="pre">(4,),</span> <span class="pre">float32)</span></code>. An action represents the Cartesian displacement dx, dy, and dz of the end effector. In addition to a last action that controls closing and opening of the gripper. This last action is not required since
-there is no object to be manipulated, thus its value won’t generate any control output.</p>
+<p>The action space is a <code class="docutils literal notranslate"><span class="pre">Box(-1.0,</span> <span class="pre">1.0,</span> <span class="pre">(4,),</span> <span class="pre">float32)</span></code>. An action represents the Cartesian displacement dx, dy, and dz of the end effector. In addition to a last action that controls closing and opening of the gripper.</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -396,8 +360,8 @@ there is no object to be manipulated, thus its value won’t generate any contro
 <td><p>-1</p></td>
 <td><p>1</p></td>
 <td><p>-</p></td>
-<td><p>-</p></td>
-<td><p>-</p></td>
+<td><p>hinge</p></td>
+<td><p>position (m)</p></td>
 </tr>
 </tbody>
 </table>
@@ -405,9 +369,11 @@ there is no object to be manipulated, thus its value won’t generate any contro
 </section>
 <section id="observation-space">
 <h2>Observation Space<a class="headerlink" href="#observation-space" title="Permalink to this heading">#</a></h2>
-<p>The observation is a <code class="docutils literal notranslate"><span class="pre">goal-aware</span> <span class="pre">observation</span> <span class="pre">space</span></code>. It consists of a dictionary with information about the robot’s end effector state and goal. The kinematics observations are derived from Mujoco bodies known as <a class="reference external" href="https://mujoco.readthedocs.io/en/latest/XMLreference.html?highlight=site#body-site">sites</a>
-attached to the body of interest, the end effector. Also to take into account the temporal influence of the step time, velocity values are multiplied by the step time dt=number_of_sub_steps*sub_step_time. The dictionary consists of the following 3 keys:</p>
-<p><code class="docutils literal notranslate"><span class="pre">observation</span></code>: its value is an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(10,)</span></code>. It consists of kinematic information of the end effector. The elements of the array correspond to the following:</p>
+<p>The observation is a <code class="docutils literal notranslate"><span class="pre">goal-aware</span> <span class="pre">observation</span> <span class="pre">space</span></code>. It consists of a dictionary with information about the robot’s end effector state and goal. The kinematics observations are derived from Mujoco bodies known as <a class="reference external" href="https://mujoco.readthedocs.io/en/latest/XMLreference.html?highlight=site#body-site">sites</a> attached to the body of interest such as the block or the end effector.
+Also to take into account the temporal influence of the step time, velocity values are multiplied by the step time dt=number_of_sub_steps*sub_step_time. The dictionary consists of the following 3 keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">observation</span></code>: its value is an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(25,)</span></code>. It consists of kinematic information of the block object and gripper. The elements of the array correspond to the following:</p></li>
+</ul>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -450,6 +416,60 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>position (m)</p></td>
 </tr>
 <tr class="row-odd"><td><p>3</p></td>
+<td><p>Block x position in global coordinates</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>position (m)</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Block y position in global coordinates</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>position (m)</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Block z position in global coordinates</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>position (m)</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Relative block x position with respect to gripper x position in globla coordinates. Equals to x<sub>gripper</sub> - x<sub>block</sub></p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>position (m)</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Relative block y position with respect to gripper y position in globla coordinates. Equals to y<sub>gripper</sub> - y<sub>block</sub></p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>position (m)</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Relative block z position with respect to gripper z position in globla coordinates. Equals to z<sub>gripper</sub> - z<sub>block</sub></p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>position (m)</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
 <td><p>Joint displacement of the right gripper finger</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -458,7 +478,7 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>hinge</p></td>
 <td><p>position (m)</p></td>
 </tr>
-<tr class="row-even"><td><p>4</p></td>
+<tr class="row-even"><td><p>10</p></td>
 <td><p>Joint displacement of the left gripper finger</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -467,7 +487,88 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>hinge</p></td>
 <td><p>position (m)</p></td>
 </tr>
-<tr class="row-odd"><td><p>5</p></td>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>Global x rotation of the block in a XYZ Euler frame rotation</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>angle (rad)</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>Global y rotation of the block in a XYZ Euler frame rotation</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>angle (rad)</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>Global z rotation of the block in a XYZ Euler frame rotation</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>angle (rad)</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>Relative block linear velocity in x direction with respect to the gripper</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>velocity (m/s)</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>Relative block linear velocity in y direction with respect to the gripper</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>velocity (m/s)</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>Relative block linear velocity in z direction</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>velocity (m/s)</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>Block angular velocity along the x axis</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>angular velocity (rad/s)</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>Block angular velocity along the y axis</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>angular velocity (rad/s)</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>Block angular velocity along the z axis</p></td>
+<td><p>-Inf</p></td>
+<td><p>Inf</p></td>
+<td><p>object0</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+<td><p>angular velocity (rad/s)</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
 <td><p>End effector linear velocity x direction</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -476,7 +577,7 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>-</p></td>
 <td><p>velocity (m/s)</p></td>
 </tr>
-<tr class="row-even"><td><p>6</p></td>
+<tr class="row-odd"><td><p>21</p></td>
 <td><p>End effector linear velocity y direction</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -485,7 +586,7 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>-</p></td>
 <td><p>velocity (m/s)</p></td>
 </tr>
-<tr class="row-odd"><td><p>7</p></td>
+<tr class="row-even"><td><p>22</p></td>
 <td><p>End effector linear velocity z direction</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -494,7 +595,7 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>-</p></td>
 <td><p>velocity (m/s)</p></td>
 </tr>
-<tr class="row-even"><td><p>8</p></td>
+<tr class="row-odd"><td><p>23</p></td>
 <td><p>Right gripper finger linear velocity</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -503,7 +604,7 @@ attached to the body of interest, the end effector. Also to take into account th
 <td><p>hinge</p></td>
 <td><p>velocity (m/s)</p></td>
 </tr>
-<tr class="row-odd"><td><p>9</p></td>
+<tr class="row-even"><td><p>24</p></td>
 <td><p>Left gripper finger linear velocity</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
@@ -515,7 +616,9 @@ attached to the body of interest, the end effector. Also to take into account th
 </tbody>
 </table>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">desired_goal</span></code>: this key represents the final goal to be achieved. In this environment it is a 3-dimensional <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="docutils literal notranslate"><span class="pre">(3,)</span></code>, that consists of the three cartesian coordinates of the desired final end effector position <code class="docutils literal notranslate"><span class="pre">[x,y,z]</span></code>. The elements of the array are the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">desired_goal</span></code>: this key represents the final goal to be achieved. In this environment it is a 3-dimensional <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="docutils literal notranslate"><span class="pre">(3,)</span></code>, that consists of the three cartesian coordinates of the desired final block position <code class="docutils literal notranslate"><span class="pre">[x,y,z]</span></code>. In order for the robot to perform a push trajectory, the goal position can only be placed on top of the table. The elements of the array are the following:</p></li>
+</ul>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -529,31 +632,32 @@ attached to the body of interest, the end effector. Also to take into account th
 </thead>
 <tbody>
 <tr class="row-even"><td><p>0</p></td>
-<td><p>Final goal end effector position in the x coordinate</p></td>
+<td><p>Final goal block position in the x coordinate</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
-<td><p>robot0:grip</p></td>
+<td><p>target0</p></td>
 <td><p>position (m)</p></td>
 </tr>
 <tr class="row-odd"><td><p>1</p></td>
-<td><p>Final goal end effector position in the y coordinate</p></td>
+<td><p>Final goal block position in the y coordinate</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
-<td><p>robot0:grip</p></td>
+<td><p>target0</p></td>
 <td><p>position (m)</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
-<td><p>Final goal end effector position in the z coordinate</p></td>
+<td><p>Final goal block position in the z coordinate</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
-<td><p>robot0:grip</p></td>
+<td><p>target0</p></td>
 <td><p>position (m)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">achieved_goal</span></code>: this key represents the current state of the end effector, as if it would have achieved a goal. This is useful for goal orientated learning algorithms such as those that use <a class="reference external" href="https://arxiv.org/abs/1707.01495">Hindsight Experience Replay</a> (HER).
-The value is an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(3,)</span></code>. The elements of the array are the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">achieved_goal</span></code>: this key represents the current state of the block, as if it would have achieved a goal. This is useful for goal orientated learning algorithms such as those that use <a class="reference external" href="https://arxiv.org/abs/1707.01495">Hindsight Experience Replay</a> (HER). The value is an <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(3,)</span></code>. The elements of the array are the following:</p></li>
+</ul>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -567,24 +671,24 @@ The value is an <code class="docutils literal notranslate"><span class="pre">nda
 </thead>
 <tbody>
 <tr class="row-even"><td><p>0</p></td>
-<td><p>Current end effector position in the x coordinate</p></td>
+<td><p>Current block position in the x coordinate</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
-<td><p>robot0:grip</p></td>
+<td><p>object0</p></td>
 <td><p>position (m)</p></td>
 </tr>
 <tr class="row-odd"><td><p>1</p></td>
-<td><p>Current end effector position in the y coordinate</p></td>
+<td><p>Current block position in the y coordinate</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
-<td><p>robot0:grip</p></td>
+<td><p>object0</p></td>
 <td><p>position (m)</p></td>
 </tr>
 <tr class="row-even"><td><p>2</p></td>
-<td><p>Current end effector position in the z coordinate</p></td>
+<td><p>Current block position in the z coordinate</p></td>
 <td><p>-Inf</p></td>
 <td><p>Inf</p></td>
-<td><p>robot0:grip</p></td>
+<td><p>object0</p></td>
 <td><p>position (m)</p></td>
 </tr>
 </tbody>
@@ -595,23 +699,22 @@ The value is an <code class="docutils literal notranslate"><span class="pre">nda
 <h2>Rewards<a class="headerlink" href="#rewards" title="Permalink to this heading">#</a></h2>
 <p>The reward can be initialized as <code class="docutils literal notranslate"><span class="pre">sparse</span></code> or <code class="docutils literal notranslate"><span class="pre">dense</span></code>:</p>
 <ul class="simple">
-<li><p><em>sparse</em>: the returned reward can have two values: <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the end effector hasn’t reached its final target position, and <code class="docutils literal notranslate"><span class="pre">0</span></code> if the end effector is in the final target position (the robot is considered to have reached the goal if the Euclidean distance between
-the end effector and the goal is lower than 0.05 m).</p></li>
+<li><p><em>sparse</em>: the returned reward can have two values: <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the block hasn’t reached its final target position, and <code class="docutils literal notranslate"><span class="pre">0</span></code> if the block is in the final target position (the block is considered to have reached the goal if the Euclidean distance between both is lower than 0.05 m).</p></li>
 <li><p><em>dense</em>: the returned reward is the negative Euclidean distance between the achieved goal position and the desired goal.</p></li>
 </ul>
-<p>To initialize this environment with one of the mentioned reward functions the type of reward must be specified in the id string when the environment is initialized. For <code class="docutils literal notranslate"><span class="pre">sparse</span></code> reward the id is the default of the environment, <code class="docutils literal notranslate"><span class="pre">FetchReach-v2</span></code>. However, for <code class="docutils literal notranslate"><span class="pre">dense</span></code>
-reward the id must be modified to <code class="docutils literal notranslate"><span class="pre">FetchReachDense-v2</span></code> and initialized as follows:</p>
+<p>To initialize this environment with one of the mentioned reward functions the type of reward must be specified in the id string when the environment is initialized. For <code class="docutils literal notranslate"><span class="pre">sparse</span></code> reward the id is the default of the environment, <code class="docutils literal notranslate"><span class="pre">FetchPush-v2</span></code>. However, for <code class="docutils literal notranslate"><span class="pre">dense</span></code> reward the id must be modified to <code class="docutils literal notranslate"><span class="pre">FetchPush-v2</span></code> and initialized as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gymnasium</span> <span class="k">as</span> <span class="nn">gym</span>
 
-<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;FetchReachDense-v2&#39;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;FetchPushDense-v2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="starting-state">
 <h2>Starting State<a class="headerlink" href="#starting-state" title="Permalink to this heading">#</a></h2>
-<p>When the environment is reset the gripper is placed in the following global cartesian coordinates <code class="docutils literal notranslate"><span class="pre">(x,y,z)</span> <span class="pre">=</span> <span class="pre">[1.3419</span> <span class="pre">0.7491</span> <span class="pre">0.555]</span> <span class="pre">m</span></code>, and its orientation in quaternions is <code class="docutils literal notranslate"><span class="pre">(w,x,y,z)</span> <span class="pre">=</span> <span class="pre">[1.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0,</span> <span class="pre">0.0]</span></code>. The joint positions are computed by inverse kinematics
-internally by MuJoCo. The base of the robot will always be fixed at <code class="docutils literal notranslate"><span class="pre">(x,y,z)</span> <span class="pre">=</span> <span class="pre">[0.405,</span> <span class="pre">0.48,</span> <span class="pre">0]</span></code> in global coordinates.</p>
-<p>The gripper’s target position is randomly selected by adding an offset to the initial grippers position <code class="docutils literal notranslate"><span class="pre">(x,y,z)</span></code> sampled from a uniform distribution with a range of <code class="docutils literal notranslate"><span class="pre">[-0.15,</span> <span class="pre">0.15]</span> <span class="pre">m</span></code>.</p>
+<p>When the environment is reset the gripper is placed in the following global cartesian coordinates <code class="docutils literal notranslate"><span class="pre">(x,y,z)</span> <span class="pre">=</span> <span class="pre">[1.3419</span> <span class="pre">0.7491</span> <span class="pre">0.555]</span> <span class="pre">m</span></code>, and its orientation in quaternions is <code class="docutils literal notranslate"><span class="pre">(w,x,y,z)</span> <span class="pre">=</span> <span class="pre">[1.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0,</span> <span class="pre">0.0]</span></code>. The joint positions are computed by inverse kinematics internally by MuJoCo. The base of the robot will always be fixed at <code class="docutils literal notranslate"><span class="pre">(x,y,z)</span> <span class="pre">=</span> <span class="pre">[0.405,</span> <span class="pre">0.48,</span> <span class="pre">0]</span></code> in global coordinates.</p>
+<p>The block’s position has a fixed height of <code class="docutils literal notranslate"><span class="pre">(z)</span> <span class="pre">=</span> <span class="pre">[0.42]</span> <span class="pre">m</span> </code> (on top of the table). The initial <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> position of the block is the gripper’s x and y coordinates plus an offset sampled from a uniform distribution with a range of <code class="docutils literal notranslate"><span class="pre">[-0.15,</span> <span class="pre">0.15]</span> <span class="pre">m</span></code>. Offset samples are generated until the 2-dimensional Euclidean distance from the gripper to the block is greater than <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">m</span></code>.
+The initial orientation of the block is the same as for the gripper, <code class="docutils literal notranslate"><span class="pre">(w,x,y,z)</span> <span class="pre">=</span> <span class="pre">[1.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0,</span> <span class="pre">0.0]</span></code>.</p>
+<p>Finally the target position where the robot has to move the block is generated. The target can be in mid-air or over the table. The random target is also generated by adding an offset to the initial grippers position <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> sampled from a uniform distribution with a range of <code class="docutils literal notranslate"><span class="pre">[-0.15,</span> <span class="pre">0.15]</span> <span class="pre">m</span></code>. The height of the target is initialized at <code class="docutils literal notranslate"><span class="pre">(z)</span> <span class="pre">=</span> <span class="pre">[0.42]</span> <span class="pre">m</span> </code> on the table.</p>
 </section>
 <section id="episode-end">
 <h2>Episode End<a class="headerlink" href="#episode-end" title="Permalink to this heading">#</a></h2>
@@ -620,10 +723,11 @@ The episode is never <code class="docutils literal notranslate"><span class="pre
 </section>
 <section id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">#</a></h2>
-<p>To increase/decrease the maximum number of timesteps before the episode is <code class="docutils literal notranslate"><span class="pre">truncated</span></code> the <code class="docutils literal notranslate"><span class="pre">max_episode_steps</span></code> argument can be set at initialization. The default value is 50. For example, to increase the total number of timesteps to 100 make the environment as follows:</p>
+<p>To increase/decrease the maximum number of timesteps before the episode is <code class="docutils literal notranslate"><span class="pre">truncated</span></code> the <code class="docutils literal notranslate"><span class="pre">max_episode_steps</span></code> argument can be set at initialization.
+The default value is 50. For example, to increase the total number of timesteps to 100 make the environment as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gymnasium</span> <span class="k">as</span> <span class="nn">gym</span>
 
-<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;FetchReach-v2&#39;</span><span class="p">,</span> <span class="n">max_episode_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="o">.</span><span class="n">make</span><span class="p">(</span><span class="s1">&#39;FetchPush-v2&#39;</span><span class="p">,</span> <span class="n">max_episode_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -641,23 +745,23 @@ The episode is never <code class="docutils literal notranslate"><span class="pre
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../FetchSlide/">
+          <a class="next-page" href="../reach/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Fetch Slide</div>
+                <div class="title">Reach</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-            <a class="prev-page" href="../FetchPush/">
+            <a class="prev-page" href="../pick_and_place/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Fetch Push</div>
+                <div class="title">Pick And Place</div>
                 
               </div>
             </a>
@@ -698,7 +802,7 @@ The episode is never <code class="docutils literal notranslate"><span class="pre
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Fetch Reach</a><ul>
+<li><a class="reference internal" href="#">Push</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#action-space">Action Space</a></li>
 <li><a class="reference internal" href="#observation-space">Observation Space</a></li>
