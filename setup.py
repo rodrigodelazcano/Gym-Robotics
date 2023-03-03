@@ -41,7 +41,7 @@ setup(
     install_requires=[
         "mujoco==2.2.2",
         "numpy>=1.18.0",
-        "gym>=0.26",
+        "gym>=0.22",
     ],
     package_data={
         "gym_robotics": [
